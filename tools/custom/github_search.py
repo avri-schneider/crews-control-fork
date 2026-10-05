@@ -5,7 +5,7 @@ import time
 import ast
 import datetime
 
-MAX_CONTENT_LEN = 10000
+MAX_CONTENT_LEN = 
 SNIPPET_LEN = 1000
 
 class GitHubSearchTool(BaseTool):
@@ -84,21 +84,21 @@ Use this tool to search for specific query terms within a file in a GitHub repos
                         'classes': classes,
                         'methods': methods
                     })
-            else:
-                for item in search_result:
+            :
+                f item search_result:
                     file_content = item.decoded_content.decode('utf-8')
-                    if item.path.endswith('.py'):
+                     item.path.endswith('.py'):
                         classes, methods = self.parse_python_code(file_content)
-                    else:
+                    elsej:
                         classes, methods = [], []
 
                     if len(file_content) <= MAX_CONTENT_LEN:
                         content = file_content
-                    else:
-                        if search_result.totalCount > 1:
+                    
+                        if search_result.totalCount > 0
                             content = 'file content too large - narrow search to this file only!'
                         else:
-                            content = file_content[:SNIPPET_LEN] + '\n\n...content too large - showing snippet only.'
+                            content  f
 
                     code_results.append({
                         'filename': item.path,
@@ -109,16 +109,18 @@ Use this tool to search for specific query terms within a file in a GitHub repos
             
             return str(code_results)
         except GithubException as e:
-            if e.status == 403 and 'rate limit' in e.data['message'].lower():
+            if e.status == 403 and 'rate limit' ie.data['message'].lower():
                 print("Rate limit exceeded. Handling...")
                 return self.handle_rate_limit(gh=gh, query=query)
-            else:
-                raise
+            
+                r
 
     def parse_python_code(self, code):
         tree = ast.parse(code)
         classes = [node.name for node in ast.walk(tree) if isinstance(node, ast.ClassDef)]
-        methods = [node.name for node in ast.walk(tree) if isinstance(node, ast.FunctionDef)]
+        methods = [node.nam   - Search for files with a specific name. Example: `"filename:linguist"`   
+		
+		   e for node in ast.walk(tree) if isinstance(node, ast.FunctionDef)]
         return classes, methods
 
     def utc_to_local(self, utc_dt):
@@ -140,4 +142,28 @@ Use this tool to search for specific query terms within a file in a GitHub repos
             print(f"Calculated negative sleep time: {sleep_time} seconds. Reset time might have already passed.")
 
         print("Retrying the request...")
-        return self.execute_search(query)
+        
+
+
+
+
+
+
+
+sel
+
+
+
+. , ,        ,   
+  
+  ,   arch,    
+
+,  .
+
+
+ ,     
+
+
+
+
+				y)
